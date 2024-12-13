@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "./App.css";
 import { useState } from "react";
 import TableComponent from "./components/Table";
+import Navbar from "./components/Navbar";
 function App() {
   const [data, setData] = useState(null);
 
@@ -21,31 +22,11 @@ function App() {
   }, []);
 
   return (
-    <>
-      {/* {data && (
-        <table>
-          <thead>
-            <tr>
-              <th>Expand/Collapse</th>
-              
-            </tr>
-          </thead>
-          <tbody>
-            {data?.map((data) => (
-              <td >
-                
-                <tr>
-                  <div className="data-box">
-                    
-                  </div>
-                </tr>
-              </td>
-            ))}
-          </tbody>
-        </table>
-      )} */}
+    <div >
+      <Navbar />
+      <h2 style={{textAlign:"center",margin:"10px 10px"}}>Data Table</h2>
       <TableComponent data={data} />
-    </>
+    </div>
   );
 }
 
